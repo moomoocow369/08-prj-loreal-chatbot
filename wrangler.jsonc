@@ -6,6 +6,8 @@
   // The Worker code that handles /api requests
   "main": "RESOURCE_cloudflare-worker.js",
   "compatibility_date": "2025-09-01",
+  // Give the site a public URL: 08-prj-loreal-chatbot.<subdomain>.workers.dev
+  "workers_dev": true,
   // Serve the website files (index.html, style.css, script.js, img/) from this folder
   "assets": {
     "directory": "./",
