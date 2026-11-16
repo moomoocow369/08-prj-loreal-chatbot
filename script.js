@@ -1,8 +1,10 @@
 /* ---------- Settings ---------- */
 
-// The Cloudflare Worker that hosts this site also handles chat at "/api".
+// The Cloudflare Worker handles chat at "/api".
+// We use the full address so the chat works from any site,
+// including GitHub Pages.
 // (No API key goes here — the Worker keeps the key safe as a secret.)
-const WORKER_URL = "/api";
+const WORKER_URL = "https://08-prj-loreal-chatbot.lstansbury222.workers.dev/api";
 
 // The system prompt tells the AI how to behave.
 const systemPrompt = `You are the L'Oréal Smart Product Advisor, a friendly and knowledgeable beauty assistant.
