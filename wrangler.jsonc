@@ -10,6 +10,11 @@
   "workers_dev": true,
   // Keep variables added in the Cloudflare dashboard when a new build deploys
   "keep_vars": true,
+  // Before each deploy: if the Cloudflare build has an OPENAI_API_KEY variable,
+  // copy it into the Worker as an encrypted secret. (The key itself is never in this repo.)
+  "build": {
+    "command": "if [ -n \"$OPENAI_API_KEY\" ]; then echo \"$OPENAI_API_KEY\" | npx wrangler secret put OPENAI_API_KEY; else echo 'No OPENAI_API_KEY build variable found'; fi"
+  },
   // Serve the website files (index.html, style.css, script.js, img/) from this folder
   "assets": {
     "directory": "./",
