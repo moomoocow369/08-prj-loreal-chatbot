@@ -8,6 +8,8 @@
   "compatibility_date": "2025-09-01",
   // Give the site a public URL: 08-prj-loreal-chatbot.<subdomain>.workers.dev
   "workers_dev": true,
+  // Keep variables added in the Cloudflare dashboard when a new build deploys
+  "keep_vars": true,
   // Serve the website files (index.html, style.css, script.js, img/) from this folder
   "assets": {
     "directory": "./",
