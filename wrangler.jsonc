@@ -1,0 +1,14 @@
+// Tells Cloudflare how to build and deploy this project.
+// (No secrets here — the OpenAI key is stored in the Cloudflare dashboard.)
+{
+  // Must match the Worker name in your Cloudflare dashboard
+  "name": "08-prj-loreal-chatbot",
+  // The Worker code that handles /api requests
+  "main": "RESOURCE_cloudflare-worker.js",
+  "compatibility_date": "2025-09-01",
+  // Serve the website files (index.html, style.css, script.js, img/) from this folder
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS"
+  }
+}

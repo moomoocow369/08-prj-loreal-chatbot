@@ -1,0 +1,9 @@
+.git
+.github
+.devcontainer
+.gitignore
+.assetsignore
+AGENTS.md
+README.md
+RESOURCE_cloudflare-worker.js
+wrangler.jsonc
