@@ -24,6 +24,16 @@ export default {
       }
 
       const apiKey = env.OPENAI_API_KEY; // the Cloudflare secret
+
+      // If the secret is missing, explain the problem instead of calling OpenAI.
+      // (This lists variable NAMES only, never their values.)
+      if (!apiKey) {
+        const message = `OPENAI_API_KEY secret not found. Variables this Worker can see: ${Object.keys(env).join(", ")}`;
+        return new Response(JSON.stringify({ error: { message: message } }), {
+          status: 500,
+          headers: corsHeaders,
+        });
+      }
       const apiUrl = "https://api.openai.com/v1/chat/completions";
       const userInput = await request.json();
 
